@@ -1,0 +1,31 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-0.eureka.default.svc.cluster.local:8761/eureka
+  instance:
+    prefer-ip-address: true
+    hostname: eureka-0
+
+
+
+microservice:
+  party-service:
+    endpoints:
+      endpoint:
+        uri: http://PARTY-SERVICE/party/create
+
+  person-service:
+    endpoints:
+      endpoint:
+        uri: http://PERSON-SERVICE/person/create
+  account-service:
+    endpoints:
+      endpoint:
+        uri: http://ACCOUNT-SERVICE/account/create
+
+  customer-service:
+    endpoints:
+      endpoint:
+        uri: http://CUSTOMER-SERVICE/customer/create
